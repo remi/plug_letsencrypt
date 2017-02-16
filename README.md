@@ -38,11 +38,18 @@ defmodule Endpoint do
 end
 ```
 
+The `LETSENCRYPT_RESPONSE` is the response Let’s Encrypt will be looking for,
+something like:
+
+```bash
+LETSENCRYPT_RESPONSE=esLXAidxzFUn2kkakqeqwe4Z6VqtechtQtF0.yJLghAfMirn4ejUskeB-GrqSb411923hjX-OWUvDtgc
+```
+
 The result:
 
 ```bash
-$ curl -XGET "http://localhost:4000/.well-known/acme-challenge/key"
-key.secret
+$ curl -XGET "http://localhost:4000/.well-known/acme-challenge/esLXAidxzFUn2kkakqeqwe4Z6VqtechtQtF0"
+esLXAidxzFUn2kkakqeqwe4Z6VqtechtQtF0.yJLghAfMirn4ejUskeB-GrqSb411923hjX-OWUvDtgc
 
 $ curl -XGET "http://localhost:4000/.well-known/acme-challenge/anything"
 ```

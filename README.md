@@ -26,15 +26,11 @@ Usage
 -----
 
 `PlugLetsEncrypt` can be used just as any other plugs. Add `PlugLetsEncrypt`
-before all of the other “route” plugs.
+with your other plugs and provide a response to serve.
 
 ```elixir
 defmodule Endpoint do
   plug PlugLetsEncrypt, response: System.get_env("LETSENCRYPT_RESPONSE")
-
-  # …
-
-  plug Router
 end
 ```
 
